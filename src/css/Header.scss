@@ -1,0 +1,63 @@
+@import 'App';
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $smallM $xxlargeM;
+    background-color: $secondaryColor;
+
+    #logo {
+        color: $primaryColor;
+        text-decoration: none;
+        margin: $largeM 0;
+        @each $property,
+        $value in $h1Font {
+            #{$property}: $value;
+        }
+    }
+
+    .links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $secondaryColor;
+        a {
+            color: $secondaryColor;
+            text-decoration: none;
+            margin-left: $largeM;
+            background-color: $primaryColor;
+            padding: $mediumM $largeM;
+            border-bottom: solid 2px $primaryColor;
+            transition: all .2s ease-in-out;
+            @each $property,
+            $value in $hrefFont {
+                #{$property}: $value;
+            }
+            &:hover {
+                color: $primaryColor;
+                background-color: $secondaryColor;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 0;
+        align-items: stretch;
+        text-align: center;
+        
+        .links {
+            flex-direction: row;
+            justify-content: space-evenly;
+            background-color: $primaryColor;
+
+            a{
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+}

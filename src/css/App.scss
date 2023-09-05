@@ -1,0 +1,81 @@
+/* Global Variables
+
+    Sizes:
+        1rem = 16px
+*/
+
+/* Colors */
+$primaryColor: #2a2d2d;
+$primaryColorLight: mix($primaryColor, white, 10%);
+$secondaryColor: #feffff;
+
+// $primaryColor: #28262f;
+// $secondaryColor: #fef5e1;
+// $tertiaryColor: #b1d9d3;
+
+/* Margin & Padding Sizes */
+$xxsmallM: .125rem;
+$xsmallM: .25rem;
+$smallM: .5rem;
+$mediumM: 1rem;
+$largeM: 2rem;
+$xlargeM: 4rem;
+$xxlargeM: 8rem;
+/* Component Sizes */
+$xsmallC: 2rem;
+$smallC: 4rem;
+$mediumC: 8rem;
+$largeC: 16rem;
+$xlargeC: 24rem;
+
+/* Font */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+$h1Font: (
+    font-family: 'Montserrat',
+    font-style: normal,
+    font-weight: 700,
+    font-size: 1.5rem
+);
+$h2Font: (
+    font-family: 'Montserrat',
+    font-style: normal,
+    font-weight: 600,
+);
+$h3Font: (
+    font-family: 'Montserrat',
+    font-style: normal,
+    font-weight: 400,
+);
+$hrefFont: (
+    font-family: 'Montserrat',
+    font-style: normal,
+    font-weight: 700,
+);
+$bodyTextFont: (
+    font-family: 'Montserrat',
+    font-style: normal,
+    font-weight: normal,
+);
+$aboutTextFont: (
+    font-family: 'Montserrat',
+    font-style: normal,
+    font-weight: normal,
+    font-size: 1.5rem
+);
+
+body {
+    margin: 0;
+    background-color: $primaryColor;
+}
+
+:root {
+    background-color: $secondaryColor;
+}
+
+// @media (max-width: 768px) {
+
+// }

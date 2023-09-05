@@ -1,0 +1,119 @@
+@import '../App';
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        color: $secondaryColor;
+        margin: 0 0 $largeM;
+        padding: $mediumM 0;
+        border-bottom: solid 2px $secondaryColor;
+
+        @each $property,
+        $value in $h1Font {
+            #{$property}: $value;
+        }
+    }
+
+    .aboutDivider {
+        margin: $mediumM 0;
+    }
+    .aboutText{
+        padding: $mediumM $xxlargeM;
+        background-color: $secondaryColor;
+
+        p {
+            color: $primaryColor;
+            border-left: solid 2px $primaryColor;
+            border-right: solid 2px $primaryColor;
+            padding: 0 $largeM;
+        }
+        @each $property,
+        $value in $aboutTextFont {
+            #{$property}: $value;
+        }
+    }
+
+    .projects {
+        padding: $largeM $xxlargeM;
+    }
+
+    .skills {
+        color: $primaryColor;
+        padding: $largeM $xxlargeM $largeM+$mediumM;
+        background-color: $secondaryColor;
+
+        h1 {
+            color: $primaryColor;
+            border-bottom: solid 2px $primaryColor;
+
+        }
+
+        h2 {
+            width: fit-content;
+            border-bottom: solid 2px $primaryColor;
+            padding: $smallM $smallM;
+
+            @each $property,
+            $value in $h2Font {
+                #{$property}: $value;
+            }
+        }
+    }
+
+    .contact {
+        padding: $largeM $xxlargeM;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        text-align: center;
+
+        .aboutText {
+            padding: $smallM $largeM 0;
+        }
+
+        .projects {
+            padding: $largeM $largeM;
+
+            h1 {
+                margin: 0;
+            }
+
+        }
+
+        .skills {
+            padding: $largeM;
+
+            h2 {
+                display: inline-block;
+                margin: 0;
+                padding: $smallM $smallM;
+            }
+
+            .devSkills {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .nonDevSkills {
+                display: flex;
+                flex-direction: column;
+
+                h2 {
+                    align-self: center;
+                }
+            }
+        }
+
+        .contact {
+            padding: $largeM $largeM;
+
+            a {
+                margin: $xsmallM;
+            }
+        }
+    }
+}

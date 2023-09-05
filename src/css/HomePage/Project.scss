@@ -1,0 +1,77 @@
+@import '../App';
+
+.projectContainer {
+    display: flex;
+    margin: $largeM 0;
+
+    .projectInfo {
+        margin: $largeM 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        .projectNameAndDescription {
+            display: flex;
+            flex-direction: column;
+            .projectName {
+                color: $secondaryColor;
+                margin: 0;
+
+                @each $property,
+                $value in $h2Font {
+                    #{$property}: $value;
+                }
+            }
+
+            .projectDescription {
+                color: $secondaryColor;
+                width: 50%;
+
+                @each $property,
+                $value in $bodyTextFont {
+                    #{$property}: $value;
+                }
+            }
+        }
+
+        .projectLink {
+            color: $primaryColor;
+            text-decoration: none;
+            background-color: $secondaryColor;
+            padding: $mediumM $largeM;
+            border-bottom: solid 1px $secondaryColor;
+            transition: all .2s ease-in-out;
+
+            @each $property,
+            $value in $hrefFont {
+                #{$property}: $value;
+            }
+
+            &:hover {
+                color: $secondaryColor;
+                background-color: $primaryColor;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .projectContainer {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+
+        .projectInfo {
+            margin: $largeM 0 $largeM;
+            align-items: center;
+            .projectNameAndDescription{
+                align-items: center;
+                .projectDescription{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

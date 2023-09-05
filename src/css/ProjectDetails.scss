@@ -1,0 +1,158 @@
+@import 'App';
+
+.projectDetailsSectionOne {
+    display: flex;
+    flex-direction: column;
+    color: $secondaryColor;
+    padding: $largeM $xxlargeM;
+
+    h1 {
+        margin: 0 0 $largeM;
+        padding: $mediumM 0;
+        border-bottom: solid 2px $secondaryColor;
+        width: 100%;
+        height: $xsmallC;
+
+        @each $property,
+        $value in $h1Font {
+            #{$property}: $value;
+        }
+    }
+
+    .projectDetailsContent {
+        display: flex;
+        flex-direction: row;
+        margin: 0 $xlargeM 0 0;
+        width: 100%;
+
+        .projectTitleInfoAndLinks {
+            .projectTitleAndInfo {
+                p {
+                    margin: 0 0 $largeM;
+                    @each $property,
+                    $value in $bodyTextFont {
+                        #{$property}: $value;
+                    }
+                }
+            }
+
+            .projectLinks {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+
+                a {
+                    color: $primaryColor;
+                    text-decoration: none;
+                    background-color: $secondaryColor;
+                    padding: $mediumM $largeM;
+                    margin: $smallM 0;
+                    border-bottom: solid 2px $secondaryColor;
+                    transition: all .2s ease-in-out;
+                    width: 70%;
+                    text-align: center;
+
+                    @each $property,
+                    $value in $hrefFont {
+                        #{$property}: $value;
+                    }
+
+                    &:hover {
+                        color: $secondaryColor;
+                        background-color: $primaryColor;
+                    }
+                }
+            }
+        }
+
+        .projectMainImage {
+            margin: $xlargeM $largeM;
+        }
+    }
+}
+
+
+.projectDetailsSectionTwo {
+    display: flex;
+    flex-direction: column;
+    color: $primaryColor;
+    background-color: $secondaryColor;
+    padding: $largeM $xxlargeM 0;
+
+    h1 {
+        margin: 0 0 $largeM;
+        padding: $mediumM 0;
+        border-bottom: solid 2px $primaryColor;
+        width: 100%;
+        height: $xsmallC;
+
+        @each $property,
+        $value in $h1Font {
+            #{$property}: $value;
+        }
+    }
+
+    .projectSkills {
+        display: flex;
+        flex-direction: column;
+
+        .skills {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 0 $largeM;
+
+            p {
+                padding: $smallM $mediumM;
+                margin: $smallM $mediumM;
+
+                width: $smallC + $xsmallC;
+                height: $xsmallC;
+                background-color: $primaryColor;
+                color: $secondaryColor;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 25px;
+
+                @each $property,
+                $value in $hrefFont {
+                    #{$property}: $value;
+                }
+            }
+        }
+    }
+
+    .projectDetailsImages {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        img {
+            margin-bottom: $largeM;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .projectDetailsSectionOne {
+        text-align: center;
+        padding: $largeM $largeM 0;
+
+        .projectDetailsContent {
+            flex-direction: column;
+        }
+
+    }
+
+    .projectDetailsSectionTwo {
+        padding: $largeM $largeM 0;
+        .projectDetailsImages{
+            flex-direction: column;
+        }
+    }
+}

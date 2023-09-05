@@ -1,0 +1,54 @@
+@import '../App';
+
+.skillContainer {
+    display: flex;
+    flex-direction: row;
+    color: $primaryColor;
+    align-items: center;
+
+    h3 {
+        width: $mediumC;
+        padding: $smallM 0 $smallM $mediumM;
+        border-left: solid 2px $primaryColor;
+        text-align: left;
+
+        @each $property,
+        $value in $h3Font {
+            #{$property}: $value;
+        }
+    }
+
+    .skillLevel {
+        display: flex;
+        padding: 0;
+        flex-direction: row;
+
+        li {
+            list-style-type: none;
+            margin: $smallM;
+            width: $smallC;
+            height: $mediumM;
+            border-radius: 10px;
+            background-color: $primaryColor;
+
+        }
+        .inactive{
+            background-color: $primaryColorLight;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .skillContainer {
+        justify-content: space-between;
+
+        h3{
+            width: $smallC;
+        }
+        .skillLevel{
+            li{
+                width: $mediumM;
+            }
+        }
+    }
+}
