@@ -3,16 +3,22 @@ import '../../css/HomePage/Body.scss'
 import Contact from './Contact'
 import Project from './Project'
 import Skill from './Skill'
-import '../../images/bachelorproef/desktopHomeThreeHovered.jpg'
 
 export default function Body() {
     const isMobile = window.innerWidth <= 768;
 
     const descProjectBachelorproef = 'Vergelijking tussen 2D en 3D visualisaties van albumreleases voor een webapplicatie. Bachelorproef voor de opleiding Toegepaste Informatica aan HoGent.'
-    const descProjectDevops = 'Een DEVOPS project in opdracht van Delaware bestaande uit een webapplicatie en een Android applicatie.'
+    const descProjectDevops = 'Een DEVOPS project in opdracht van Delaware bestaande uit een dotnet webapplicatie en een Android applicatie.'
     const descProjectQuotesapp = 'Een minimalistische Android-applicatie, ontwikkeld in Kotlin, die inspirerende quotes presenteert.'
     const descProjectReleasesapp = 'Een webapplicatie die albumreleases weergeeft en gedetailleerde informatie daarover presenteert.'
     const descProjectFluvius = 'Een project in opdracht van Fluvius bestaande uit een webapplicatie en desktopapplicatie.'
+
+    const bachelorproefImage = require('../../images/bachelorproef/desktopHomeThreeHovered.jpg')
+    const DEVOPSImage = require('../../images/DEVOPS/desktopTracking.jpeg')
+    const quotesImage = require('../../images/quotesApp/dashboardCropped.jpg')
+    const releasesImage = require('../../images/releasesApp/home.png')
+    const fluviusImage = require('../../images/fluviusApp/categorie.png')
+
 
     return (
         <>
@@ -30,31 +36,31 @@ export default function Body() {
                         <>
                             <Project projectName='Bachelorproef'
                                 projectDescription={descProjectBachelorproef}
-                                projectImage='../../images/bachelorproef/desktopHomeThreeHovered.jpg'
+                                projectImage={bachelorproefImage}
                                 projectLink='/projectDetails/Bachelorproef?skills=React,Node.js,Three.js,HTML,CSS,Figma'
                                 alignImageRight={false}
                             />
                             <Project projectName='Delaware DEVOPS Project'
                                 projectDescription={descProjectDevops}
-                                projectImage='https://picsum.photos/200/300'
+                                projectImage={DEVOPSImage}
                                 projectLink='/projectDetails/DelawareDEVOPSProject?skills=Kotlin,C%23,HTML,CSS,DEVOPS,MySQL,Figma'
                                 alignImageRight={true}
                             />
                             <Project projectName='Android Quotes App'
                                 projectDescription={descProjectQuotesapp}
-                                projectImage='https://picsum.photos/200/300'
+                                projectImage={quotesImage}
                                 projectLink='/projectDetails/AndroidQuotesApp?skills=Kotlin'
                                 alignImageRight={false}
                             />
                             <Project projectName='Music Releases App'
                                 projectDescription={descProjectReleasesapp}
-                                projectImage='https://picsum.photos/200/300'
+                                projectImage={releasesImage}
                                 projectLink='/projectDetails/MusicReleasesApp?skills=React,Node.js,HTML,CSS'
                                 alignImageRight={true}
                             />
                             <Project projectName='Fluvius WebApp'
                                 projectDescription={descProjectFluvius}
-                                projectImage='https://picsum.photos/200/300'
+                                projectImage={fluviusImage}
                                 projectLink='/projectDetails/FluviusWebApp?skills=Java,React,Node.js,HTML,CSS'
                                 alignImageRight={false}
                             />

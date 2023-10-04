@@ -2,8 +2,13 @@
 
 .projectContainer {
     display: flex;
-    margin: $largeM 0;
+    margin: $xlargeM 0;
     justify-content: space-between;
+    align-items: center;
+
+    img {
+        width: 45%;
+    }
 
     .projectInfo {
         margin: $largeM 0;
