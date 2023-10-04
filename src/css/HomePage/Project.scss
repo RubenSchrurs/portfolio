@@ -3,6 +3,7 @@
 .projectContainer {
     display: flex;
     margin: $largeM 0;
+    justify-content: space-between;
 
     .projectInfo {
         margin: $largeM 0;
@@ -14,6 +15,7 @@
         .projectNameAndDescription {
             display: flex;
             flex-direction: column;
+
             .projectName {
                 color: $secondaryColor;
                 margin: 0;
@@ -26,7 +28,7 @@
 
             .projectDescription {
                 color: $secondaryColor;
-                width: 50%;
+                width: 60%;
 
                 @each $property,
                 $value in $bodyTextFont {
@@ -66,9 +68,11 @@
         .projectInfo {
             margin: $largeM 0 $largeM;
             align-items: center;
-            .projectNameAndDescription{
+
+            .projectNameAndDescription {
                 align-items: center;
-                .projectDescription{
+
+                .projectDescription {
                     width: 100%;
                 }
             }

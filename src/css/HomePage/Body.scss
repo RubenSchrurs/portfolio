@@ -19,7 +19,8 @@
     .aboutDivider {
         margin: $mediumM 0;
     }
-    .aboutText{
+
+    .aboutText {
         padding: $mediumM $xxlargeM;
         background-color: $secondaryColor;
 
@@ -29,6 +30,7 @@
             border-right: solid 2px $primaryColor;
             padding: 0 $largeM;
         }
+
         @each $property,
         $value in $aboutTextFont {
             #{$property}: $value;
@@ -37,6 +39,7 @@
 
     .projects {
         padding: $largeM $xxlargeM;
+
     }
 
     .skills {
@@ -72,7 +75,17 @@
         text-align: center;
 
         .aboutText {
-            padding: $smallM $largeM 0;
+            padding: $smallM;
+            text-align: center;
+
+            p {
+                border: none;
+            }
+
+            @each $property,
+            $value in $aboutTextFontMobile {
+                #{$property}: $value;
+            }
         }
 
         .projects {

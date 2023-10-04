@@ -3,15 +3,16 @@ import '../../css/HomePage/Body.scss'
 import Contact from './Contact'
 import Project from './Project'
 import Skill from './Skill'
+import '../../images/bachelorproef/desktopHomeThreeHovered.jpg'
 
 export default function Body() {
     const isMobile = window.innerWidth <= 768;
 
     const descProjectBachelorproef = 'Vergelijking tussen 2D en 3D visualisaties van albumreleases voor een webapplicatie. Bachelorproef voor de opleiding Toegepaste Informatica aan HoGent.'
-    const descProjectDevops = 'description'
-    const descProjectQuotesapp = 'description'
-    const descProjectReleasesapp = 'description'
-    const descProjectFluvius = 'description'
+    const descProjectDevops = 'Een DEVOPS project in opdracht van Delaware bestaande uit een webapplicatie en een Android applicatie.'
+    const descProjectQuotesapp = 'Een minimalistische Android-applicatie, ontwikkeld in Kotlin, die inspirerende quotes presenteert.'
+    const descProjectReleasesapp = 'Een webapplicatie die albumreleases weergeeft en gedetailleerde informatie daarover presenteert.'
+    const descProjectFluvius = 'Een project in opdracht van Fluvius bestaande uit een webapplicatie en desktopapplicatie.'
 
     return (
         <>
@@ -19,7 +20,7 @@ export default function Body() {
                 <div className='aboutDivider' style={isMobile ? { display: 'none' } : undefined} />
                 <div className='aboutText'>
                     <p>
-                        Ik ben Ruben Schrurs, een ambitieuze student Toegepaste Informatica aan HoGent. Mijn passie ligt in web development, waar ik actief werk aan innovatieve projecten. Hieronder vindt u een overzicht van mijn projecten en verworven vaardigheden.
+                        Hallo! Ik ben Ruben Schrurs, een ambitieuze student Toegepaste Informatica aan HoGent. Mijn passie ligt in web development, waar ik actief werk aan innovatieve projecten. Hieronder vindt u een overzicht van mijn projecten en verworven vaardigheden.
                     </p>
                 </div>
 
@@ -29,7 +30,7 @@ export default function Body() {
                         <>
                             <Project projectName='Bachelorproef'
                                 projectDescription={descProjectBachelorproef}
-                                projectImage='https://picsum.photos/200/300'
+                                projectImage='../../images/bachelorproef/desktopHomeThreeHovered.jpg'
                                 projectLink='/projectDetails/Bachelorproef?skills=React,Node.js,Three.js,HTML,CSS,Figma'
                                 alignImageRight={false}
                             />

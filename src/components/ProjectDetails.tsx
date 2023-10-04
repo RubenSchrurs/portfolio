@@ -9,10 +9,17 @@ export default function ProjectDetails() {
     const isBachelorproef = projectName === 'Bachelorproef'
     const skillsArray = new URLSearchParams(window.location.search).get('skills')?.split(',')
 
-    const images = []
+    let images : string[] = []
 
     if (projectName === 'Bachelorproef') {
-        
+        images = [
+            '../images/bachelorproef/desktopHomeThreeHovered.jpg',
+            '../images/bachelorproef/desktopDetailsThree.jpg',
+            '../images/bachelorproef/desktopHomeConventioneel.jpg',
+            '../images/bachelorproef/desktopSearch.jpg',
+            '../images/bachelorproef/desktopDetailConventioneel.jpg',
+            '../images/bachelorproef/desktopCart.jpg',
+        ]
     }
 
     useEffect(() => {
