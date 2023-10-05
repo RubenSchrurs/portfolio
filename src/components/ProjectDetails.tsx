@@ -1,39 +1,37 @@
 import React from 'react'
+import { ImageType, bach, devops, fluvius, quotes, releases } from '../images/images'
 import '../css/ProjectDetails.scss'
-import { useEffect, useState } from 'react'
 
 export default function ProjectDetails() {
-    const [aspectRatio, setAspectRatio] = useState(window.innerWidth / window.innerHeight)
-
-    const projectName = window.location.pathname.split('/').pop()
-    const isBachelorproef = projectName === 'Bachelorproef'
+    const projectName = new URLSearchParams(window.location.search).get('name')?.split('_').join(' ')
     const skillsArray = new URLSearchParams(window.location.search).get('skills')?.split(',')
 
-    let images : string[] = []
+    const isBachelorproef = projectName === 'Bachelorproef'
+    const isDEVOPS = projectName === 'Delaware DEVOPS Project'
 
-    if (projectName === 'Bachelorproef') {
-        images = [
-            '../images/bachelorproef/desktopHomeThreeHovered.jpg',
-            '../images/bachelorproef/desktopDetailsThree.jpg',
-            '../images/bachelorproef/desktopHomeConventioneel.jpg',
-            '../images/bachelorproef/desktopSearch.jpg',
-            '../images/bachelorproef/desktopDetailConventioneel.jpg',
-            '../images/bachelorproef/desktopCart.jpg',
-        ]
+    let images: string[] = []
+
+    let imagesWithMobile: ImageType[] = []
+
+    switch (projectName) {
+        case 'Bachelorproef':
+            images = bach
+            break;
+        case 'Delaware DEVOPS Project':
+            imagesWithMobile = devops
+            break;
+        case 'Fluvius Webapp':
+            images = fluvius
+            break;
+        case 'Android Quotes App':
+            images = quotes
+            break;
+        case 'Music Releases App':
+            images = releases
+            break;
+        default:
+            break;
     }
-
-    useEffect(() => {
-        function handleResize() {
-            setAspectRatio(window.innerWidth / window.innerHeight)
-        }
-
-        window.addEventListener('resize', handleResize)
-
-        // Clean up the event listener when component unmounts
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [])
 
     return (
         <>
@@ -46,19 +44,16 @@ export default function ProjectDetails() {
                         </div>
                         <div className='projectLinks'>
                             <h1>Links</h1>
-                            {isBachelorproef && <a href="/">Visit Conventional version</a>}
-                            {isBachelorproef && <a href="/">Visit Three.js version</a>}
+                            {isBachelorproef && <a href="https://bachelorproef-webshop-conventioneel.vercel.app/">Visit Conventional version</a>}
+                            {isBachelorproef && <a href="https://bachelorproef-webshop-threejs.vercel.app/">Visit Three.js version</a>}
                             <a href="/">Github Link</a>
                         </div>
-                    </div>
-                    <div className='projectMainImage'>
-                        <img src={`https://picsum.photos/${(aspectRatio * window.innerWidth / 5).toFixed(0)}/${(aspectRatio * window.innerHeight / 3).toFixed(0)}`} alt='projectImage' />
                     </div>
                 </div>
             </div>
             <div className='projectDetailsSectionTwo'>
                 <div className='projectSkills'>
-                    <h1>Used Skills</h1>
+                    <h1>Skills Used</h1>
                     <div className='skills'>
                         {skillsArray?.map((skill, index) => {
                             return <p key={index}>{skill}</p>
@@ -68,9 +63,18 @@ export default function ProjectDetails() {
                 <div className='projectDetailsImages'>
                     <h1>Images</h1>
 
-                    <img src={`https://picsum.photos/${(aspectRatio * window.innerWidth / 5).toFixed(0)}/${(aspectRatio * window.innerHeight / 3).toFixed(0)}`} alt='projectImage' />
-                    <img src={`https://picsum.photos/${(aspectRatio * window.innerWidth / 5).toFixed(0)}/${(aspectRatio * window.innerHeight / 3).toFixed(0)}`} alt='projectImage' />
-                    <img src={`https://picsum.photos/${(aspectRatio * window.innerWidth / 5).toFixed(0)}/${(aspectRatio * window.innerHeight / 3).toFixed(0)}`} alt='projectImage' />
+                    {
+
+                        isDEVOPS ?
+                            imagesWithMobile.map((image, index) => {
+                                return <img key={index} src={image.url} alt='projectImage' style={{ width: `${image.isMobile ? "30%" : "100%"}` }} />
+                            })
+                            :
+                            images.map((image, index) => {
+                                return <img key={index} src={image} alt='projectImage' style={{ width: "100%" }} />
+                            })
+
+                    }
                 </div>
             </div>
         </>

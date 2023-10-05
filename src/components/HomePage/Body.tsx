@@ -37,31 +37,31 @@ export default function Body() {
                             <Project projectName='Bachelorproef'
                                 projectDescription={descProjectBachelorproef}
                                 projectImage={bachelorproefImage}
-                                projectLink='/projectDetails/Bachelorproef?skills=React,Node.js,Three.js,HTML,CSS,Figma'
+                                projectLink='/projectDetails/Bachelorproef?skills=React,Node.js,Three.js,HTML,CSS,Figma&name=Bachelorproef'
                                 alignImageRight={false}
                             />
                             <Project projectName='Delaware DEVOPS Project'
                                 projectDescription={descProjectDevops}
                                 projectImage={DEVOPSImage}
-                                projectLink='/projectDetails/DelawareDEVOPSProject?skills=Kotlin,C%23,HTML,CSS,DEVOPS,MySQL,Figma'
+                                projectLink='/projectDetails/DelawareDEVOPSProject?skills=Kotlin,C%23,HTML,CSS,DEVOPS,MySQL,Figma&name=Delaware_DEVOPS_Project'
                                 alignImageRight={true}
                             />
                             <Project projectName='Android Quotes App'
                                 projectDescription={descProjectQuotesapp}
                                 projectImage={quotesImage}
-                                projectLink='/projectDetails/AndroidQuotesApp?skills=Kotlin'
+                                projectLink='/projectDetails/AndroidQuotesApp?skills=Kotlin&name=Android_Quotes_App'
                                 alignImageRight={false}
                             />
                             <Project projectName='Music Releases App'
                                 projectDescription={descProjectReleasesapp}
                                 projectImage={releasesImage}
-                                projectLink='/projectDetails/MusicReleasesApp?skills=React,Node.js,HTML,CSS'
+                                projectLink='/projectDetails/MusicReleasesApp?skills=React,Node.js,HTML,CSS&name=Music_Releases_App'
                                 alignImageRight={true}
                             />
-                            <Project projectName='Fluvius WebApp'
+                            <Project projectName='Fluvius Webapp'
                                 projectDescription={descProjectFluvius}
                                 projectImage={fluviusImage}
-                                projectLink='/projectDetails/FluviusWebApp?skills=Java,React,Node.js,HTML,CSS'
+                                projectLink='/projectDetails/FluviusWebApp?skills=Java,React,Node.js,HTML,CSS&name=Fluvius_Webapp'
                                 alignImageRight={false}
                             />
                         </>

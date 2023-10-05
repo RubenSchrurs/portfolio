@@ -14,7 +14,7 @@ export default function Project({ projectName, projectDescription, projectImage,
                         <h2 className='projectName'>{projectName}</h2>
                         <p className='projectDescription'>{projectDescription}</p>
                     </div>
-                    <a href={projectLink} className='projectLink'>Project Link</a>
+                    <a href={projectLink} className='projectLink'>View Project</a>
                 </div>
                 {!alignImageRight && !isMobile ? <img src={projectImage} alt={projectName} className='projectImage' /> : null}
             </div>
