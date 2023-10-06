@@ -25,7 +25,7 @@ export const fluvius = [fluvius1, fluvius2, fluvius3]
 const quotes1 = require('./quotesApp/dashboard.jpg')
 const quotes2 = require('./quotesApp/favourites.jpg')
 const quotes3 = require('./quotesApp/focus.jpg')
-export const quotes = [quotes1, quotes2, quotes3]
+export const quotes: ImageType[] = [{ url: quotes1, isMobile: true}, { url: quotes2, isMobile: true}, { url: quotes3, isMobile: true}]
 
 const releases1 = require('./releasesApp/home.png')
 const releases2 = require('./releasesApp/album.png')

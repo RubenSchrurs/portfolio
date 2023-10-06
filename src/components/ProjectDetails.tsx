@@ -8,7 +8,7 @@ export default function ProjectDetails() {
     let projectInfo = ""
 
     const isBachelorproef = projectName === 'Bachelorproef'
-    const isDEVOPS = projectName === 'Delaware DEVOPS Project'
+    const hasMobile = projectName === 'Delaware DEVOPS Project' || projectName === 'Android Quotes App'
 
     let images: string[] = []
 
@@ -24,7 +24,7 @@ export default function ProjectDetails() {
             projectInfo = "In dit project, in opdracht van Delaware, werkten we aan zowel een dotnet webapplicatie als een Android applicatie. Mijn hoofdzakelijke rol was gericht op de front-end ontwikkeling voor beide applicaties. Dit gaf me de kans om te werken binnen een DEVOPS omgeving, wat een waardevolle leerervaring was. Ik nam ook graag de verantwoordelijkheid voor het plannen en structureren van het werk. Daarnaast speelde ik een rol in het sturen van het team door gerichte vragen te stellen, waardoor we onze energie efficiënt konden inzetten op de aspecten met de hoogste prioriteit."
             break;
         case 'Android Quotes App':
-            images = quotes
+            imagesWithMobile = quotes
             projectInfo = "Dit project was een persoonlijk initiatief om mijn kennis van Kotlin te verbeteren. Ik heb een minimalistische Android-applicatie ontwikkeld die inspirerende quotes presenteert. Ik heb geleerd om te werken met de Room database, die ik gebruikte om de quotes op te slaan. Ik heb ook geleerd om te werken met de Android Jetpack Navigation component, waardoor ik een beter inzicht kreeg in de navigatie tussen schermen. Ten slotte heb ik geleerd om te werken met de Android Jetpack Lifecycle component, die ik gebruikte om de levenscyclus van de applicatie te beheren."
             break;
         case 'Music Releases App':
@@ -71,7 +71,7 @@ export default function ProjectDetails() {
 
                     {
 
-                        isDEVOPS ?
+                        hasMobile ?
                             imagesWithMobile.map((image, index) => {
                                 return <img key={index} src={image.url} alt='projectImage' style={{ width: `${image.isMobile ? "30%" : "100%"}` }} />
                             })
