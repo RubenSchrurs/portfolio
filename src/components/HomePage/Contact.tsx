@@ -10,7 +10,6 @@ export default function Contact() {
                     <a href="https://github.com/RubenSchrurs">GitHub</a>
                     <a href="https://linkedin.com/in/ruben-schrurs-03502214b">LinkedIn</a>
                     <a href="mailto:ruben@schrurs.be">ruben@schrurs.be</a>
-                    <a href="/Ruben_Schrurs.pdf" download>Download MY CV</a>
                 </div>
             </div>
         </>
